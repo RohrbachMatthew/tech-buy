@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box;  */
+}
+
+/* ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    display: block;
+    padding: 4px;
+    background-color: #faf8f8; 
+}
+li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: 15;
+  } */
+
+  
+header {
+    background-color: #fdfdfd;
+    color: rgb(8, 7, 7);
+    padding: 15px 30px;
+}
+
+/* Container for logo and nav items */
+.nav-items {
+    display: flex;
+    justify-content: space-between;  /* Spaces logo and nav items apart */
+    align-items: center;  /* Centers vertically */
+}
+
+
+
+/* Logo item (on the left) */
+.logo-item {
+    font-size: 24px;
+}
+
+.logo-item a {
+    color: rgb(7, 7, 7);
+    text-decoration: none;
+}
+
+/* Navigation items (on the right) */
+.nav-items-right ul {
+    list-style-type: none;  
+    display: flex;  /* Arrange items horizontally */
+}
+
+.nav-items-right li {
+    margin-left: 20px;  /* Space between each nav item */
+}
+
+.nav-items-right a {
+    color: rgb(8, 8, 8);
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-items-right a:hover {
+    text-decoration: underline;
+}
+
+/* login button */
+/* .nav-items-right .login-button{
+    background: none;
+    border: none;
+    font-size: 16px;
+    padding: 8px 16px; 
+} */
+
+/* .login-button {
+    padding: 8px 16px; /* Match the size of the links */
+    /* border-radius: 50px;
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 16px; /* Match the nav links */
+    /* transition: all 0.5s ease;
+    line-height: 1.2; /* Ensures alignment */
+    /* display: inline-flex;
+    align-items: center; 
+    height: 40px; /
+}  */
+
+/* .login-button:hover {
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: white;
+    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+} */
+/* 
+login-button:active {
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: white;
+    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+    transform: translateY(2px);
+    transition: 100ms;
+}  */
+
+/* the center img */
+
+/* Center Image Styling */
+.center-img {
+    display: flex;
+    justify-content: center; /* Centers image horizontally */
+    align-items: center; 
+    width: 100%; 
+    margin: 20px 0; /* Adds spacing above and below */
+}
+
+.center-img img {
+    max-width: 60%; /* Adjust image width to be 60% of the page */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; 
+}
+* Body Items Wrapper */
+.body-items {
+    display: flex;
+    justify-content: center;  /* Horizontally center the content */
+    align-items: center;      /* Vertically center the content */
+    height: 100vh;            /* Take up full height of the viewport */
+    padding: 20px;
+    background-color: #f4f4f4; /* Light background color */
+}
+
+/* Body Image Container */
+.body-img {
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    width: 100%;             
+    max-width: 800px;        
+    height: auto;            
+    padding: 10px;
+}
+
+/* Body Image */
+.img-body-center {
+    width: 100%;           /* Make the image responsive */
+    max-width: 600px;     
+    height: auto;          /* Maintain the aspect ratio */
+    border-radius: 10px;   
+}
+
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container for body items */
+.body-items {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Space between the cards */
+    padding: 20px;
+}
+
+/* Card Styling */
+.card-one, .card-two {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 0 auto;
+    width: 80%; /* Limit card width */
+}
+
+/* Card One - Image on the right, text on the left */
+.card-one {
+    flex-direction: row-reverse; /* Swaps the order of image and text */
+}
+
+/* Card Two - Image on the left, text on the right */
+.card-two {
+    flex-direction: row; /* Default direction, image on the left */
+}
+
+/* Content Styling (for both cards) */
+.card-one-content, .card-two-content {
+    flex: 1; 
+    padding: 10px;
+    text-align: center; 
+    padding: 20px;
+}
+
+.card-one h3, .card-two h3 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.card-one p, .card-two p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+.button, .button.secondary {
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    background-color: #007bff; /* Primary button color */
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.button.secondary {
+    background-color: #f4f4f4; /* Secondary button color */
+    color: #007bff;
+}
+
+.button:hover {
+    background-color: #0056b3; /* Darker button color on hover */
+}
+
+.button.secondary:hover {
+    background-color: #e1e1e1;
+}
+
+/* Image Styling */
+.card-one-img img, .card-two-img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* footer */
+/* Footer styling */
+.site-footer {
+    background-color: #fff;
+    color: #000;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  /* Content Section */
+  .footer-content p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #000;
+  }
+  
+  /* Footer links section */
+  .footer-links a {
+    text-decoration: none;
+    color: #000;
+    margin: 0 15px;
+    font-size: 14px;
+  }
+  
+  .footer-links a:hover {
+    color: #007BFF; 
+  }
+  
+  /* Optional: Responsiveness */
+  @media (max-width: 768px) {
+    .footer-links {
+      display: block;
+      margin-top: 20px;
+    }
+    
+    .footer-links a {
+      display: block;
+      margin: 5px 0;
+    }
+  }
+  
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-one, .card-two {
+        flex-direction: column; /* Stack the content and image vertically on small screens */
+    }
+
+    .card-one-content, .card-two-content {
+        text-align: center;
+    }
+}
