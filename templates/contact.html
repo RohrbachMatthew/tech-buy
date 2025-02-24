@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link rel="stylesheet"  href="{{ url_for('static', filename='css/contact.css') }}" >
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-items">
+                <!-- Logo -->
+                <div class="logo-item">
+                    <a href="{{ url_for('home') }}">TECHbuy</a>
+                </div>
+                <!-- Navigation Links -->
+                <div class="nav-items-right">
+                    <ul>
+                        <li><a href="{{ url_for('home') }}">Home</a></li>
+                        <li><a href="{{ url_for('products') }}">Products</a></li>
+                        <li class="login-button"><a href="{{ url_for('login') }}">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contact Form -->
+    <div class="container">
+        <form action="">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+            <label for="email">Email</label>
+            <input type="text" id="mail" name="email" placeholder="Your email..">
+
+            <label for="subject">Subject</label>
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div> 
+</body>
+</html>
