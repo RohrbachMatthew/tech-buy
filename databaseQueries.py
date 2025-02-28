@@ -1,12 +1,17 @@
-# install mysql-connector-python
+import os
+from flask import Flask, jsonify, request
+from dotenv import load_dotenv
 import mysql.connector
+
+# Load environment variables from .env
+load_dotenv()
 
 def db_connection():
     return mysql.connector.connect(
-        user='sql5764068',
-        password='CjiQ9eFlZQ',
-        host='sql5.freesqldatabase.com',
-        database='sql5764068'
+        host=os.getenv("DB_HOST"),
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASSWORD"),
+        database=os.getenv("DB_NAME")
     )
 
 def get_products(category):
@@ -25,11 +30,30 @@ def get_products(category):
             - quantity (int): The available quantity of the product.
             - image (str): The URL or path to the product image.
     """
+    # db = db_connection()
+    # cursor = db.cursor(dictionary=True)
+    # query = ('SELECT product_name, price, stock_quantity, image_url from products'
+    #          ' WHERE category = %s')
+    # cursor.execute(query, (category,))
+    # products = cursor.fetchall()
+    # cursor.close()
+    # db.close()
+    # return products
+
+def get_products(category=None):
     db = db_connection()
     cursor = db.cursor(dictionary=True)
-    query = ('SELECT product_name, price, stock_quantity, image_url from products'
-             ' WHERE category = %s')
-    cursor.execute(query, (category,))
+    
+    # Query all products if no category is provided
+    if category:
+        query = ('SELECT product_name, price, stock_quantity, image_url '
+                 'FROM products WHERE category = %s')
+        cursor.execute(query, (category,))
+    else:
+        query = ('SELECT product_name, price, stock_quantity, image_url '
+                 'FROM products')
+        cursor.execute(query)
+    
     products = cursor.fetchall()
     cursor.close()
     db.close()
