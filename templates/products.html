@@ -32,7 +32,7 @@
     </header>
     
 <!-- search bar -->
-<div id="categorySelect" class="search-bar" onchange="fetchProducts(this.value)>
+<!-- <div id="categorySelect" class="search-bar" onchange="fetchProducts(this.value)">
   <select>
     <option value="Computers">Computers</option>
             <option value="Devices">Devices</option>
@@ -40,8 +40,17 @@
             <option value="Peripherals">Peripherals</option>
     </select>
   <input type="text" placeholder="Search products..">
- </div>
+ </div> -->
 
+
+ <div id="categorySelect" class="search-bar">
+  <select onchange="fetchProducts(this.value)">
+      <option value="Computers">Computers</option>
+      <option value="Devices">Devices</option>
+      <option value="Office">Office</option>
+      <option value="Peripherals">Peripherals</option>
+  </select>
+</div>
  <!-- dynamically insert cards here -->
 
  <div id="product-list" class="row row-cols-1 row-cols-md-2 g-4"></div>

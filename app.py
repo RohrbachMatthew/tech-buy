@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from databaseQueries import get_products
 
 app = Flask(__name__)
@@ -12,6 +12,18 @@ def home():
 @app.route("/products")
 def products():
     return render_template("products.html")
+
+@app.route('/api/products/<category>', methods=['GET'])
+def api_get_products(category):
+    """Fetch products from the database based on category and return as JSON"""
+    products = get_products(category) 
+    return jsonify(products)
+
+# @app.route("/products", methods=["GET", "POST"])
+# def products():
+#     category = request.args.get("category")  # Get category from query string
+#     products = get_products(category)  # Fetch products based on the category
+#     return render_template("products.html", products=products)
 
 # Login Page
 @app.route("/login")
@@ -32,11 +44,13 @@ def contact():
 
 #     return jsonify(products)
 
-@app.route("/products", methods=["GET", "POST"])
-def products():
-    category = request.args.get("category")  
-    products = get_products(category)  # Fetch products based on the category
-    return render_template("products.html", products=products)
+
+
+# @app.route("/products", methods=["GET", "POST"])
+# def products():
+#     category = request.args.get("category")  
+#     products = get_products(category)  # Fetch products based on the category
+#     return render_template("products.html", products=products)
 
 
 
