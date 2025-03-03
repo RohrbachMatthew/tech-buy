@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from databaseQueries import get_products
 
 app = Flask(__name__)
