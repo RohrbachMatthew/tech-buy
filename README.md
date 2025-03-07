@@ -9,6 +9,8 @@ The website serves **both customers and employees**, offering a seamless shoppin
 ## 📸 Screenshots  
 
 ![alt text](static/css/image.png)
+
+![alt text](static/css/products.png)
 ---
 
 ## 🚀 Features  
