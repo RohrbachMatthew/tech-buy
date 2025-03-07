@@ -55,7 +55,7 @@
                         // Create the image
                         const imgElement = document.createElement("img");
                         imgElement.classList.add("card-img-top");
-                        imgElement.src = product.image_url;  // Use the image_url from the API
+                        imgElement.src = product.image_url; 
                         imgElement.alt = product.product_name;
 
                         // Create the card body
@@ -65,12 +65,22 @@
                         // Create the product name
                         const cardTitle = document.createElement("h5");
                         cardTitle.classList.add("card-title");
-                        cardTitle.textContent = product.product_name;  // Use the product name from the API
+                        cardTitle.textContent = product.product_name;  
+                       
+                        const cardDescription = document.createElement("p");
+                        cardDescription.classList.add("card-description"); 
+                        cardDescription.textContent = product.description;  
+
 
                         // Create the product price
                         const cardText = document.createElement("p");
                         cardText.classList.add("card-text");
-                        cardText.textContent = `$${product.price}`;  // Display the price from the API
+                        cardText.textContent = `$${product.price}`;  
+
+                        // description
+                        // const cardText2 = document.createElement("p");
+                        // cardText2.classList.add("card-text2"); 
+                        // cardText2.textContent = product.product_description; 
 
                         // Create the purchase button
                         const purchaseButton = document.createElement("button");
@@ -79,6 +89,7 @@
 
                         // Append elements to the card
                         cardBody.appendChild(cardTitle);
+                        cardBody.appendChild(cardDescription);
                         cardBody.appendChild(cardText);
                         cardBody.appendChild(purchaseButton);
                         cardElement.appendChild(imgElement);

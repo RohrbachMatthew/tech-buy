@@ -12,7 +12,7 @@ def db_connection():
     )
 def get_products(category):
     
-    query = "SELECT `product_name`, `Price`, `Image_url` FROM products WHERE category = %s"
+    query = "SELECT `product_name`, `Price`, `Image_url` , `details` FROM products WHERE category = %s"
     
     # Connect to the database
     db = db_connection()
@@ -29,7 +29,8 @@ def get_products(category):
         {
             'product_name': product['product_name'],
             'price': product['Price'],
-            'image_url': product['Image_url']
+            'image_url': product['Image_url'],
+            'description': product ['details']
         }
         for product in products
     ]
