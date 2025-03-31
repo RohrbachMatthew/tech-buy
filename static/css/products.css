@@ -1,15 +1,14 @@
-
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 /* Body styling */
 body {
   font-family: Arial, sans-serif;
-  padding: 20px;  /* Add some space around the body */
-  background-color: #f9f9f9;  /* Light gray background */
+  padding: 20px;
+  background-color: #f9f9f9;
 }
 
 /* Header styling */
@@ -19,16 +18,15 @@ header {
   padding: 15px 30px;
 }
 
-/* Container for logo and nav items */
+/* Navbar styling */
 .nav-items {
   display: flex;
-  justify-content: space-between;  /* Spaces logo and nav items apart */
-  align-items: center;  /* Centers vertically */
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Logo item (on the left) */
 .logo-item {
-  font-size: 24px;
+  font-size: 28px;
 }
 
 .logo-item a {
@@ -36,20 +34,19 @@ header {
   text-decoration: none;
 }
 
-/* Navigation items (on the right) */
 .nav-items-right ul {
   list-style-type: none;
-  display: flex;  /* Arrange items horizontally */
+  display: flex;
 }
 
 .nav-items-right li {
-  margin-left: 20px;  /* Space between each nav item */
+  margin-left: 20px;
 }
 
 .nav-items-right a {
   color: rgb(8, 8, 8);
   text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .nav-items-right a:hover {
@@ -62,27 +59,27 @@ header {
   display: flex;
   justify-content: center;
   padding: 10px;
-  gap: 10px; /* Space between the dropdown and input */
+  gap: 10px;
 }
 
 .search-bar select,
 .search-bar input {
-  padding: 12px 20px;
+  padding: 14px 22px;
   border: 3px solid rgb(71, 71, 71);
   border-radius: 50px;
   background-color: white;
   color: rgb(8, 8, 8);
-  font-size: 16px;
+  font-size: 18px;
   box-sizing: border-box;
   transition: all 0.3s ease;
 }
 
 .search-bar select {
-  flex: 1 1 150px;
+  flex: 1 1 200px;
 }
 
 .search-bar input {
-  flex: 3 1 400px; /* Make the input larger than the select */
+  flex: 3 1 450px;
 }
 
 .search-bar select:focus,
@@ -91,92 +88,108 @@ header {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-/* Card styling */
-.card {
-  height: 100%; 
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  margin: 10px;
-  border: 1px solid #ddd;  /* Adding a light border around the card */
-  border-radius: 8px;      /* Adding rounded corners */
-  background-color: #fff;  
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  /* Soft shadow for depth */
-  transition: all 0.3s ease;  /* Smooth transition for hover effect */
-}
-
-.card:hover {
-  transform: scale(1.05);  /* Slight zoom effect on hover */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);  /* Deeper shadow on hover */
-}
-
-.card-img-top {
-  height: 250px; /* Adjusted height */
-  object-fit: cover; /* Ensures image covers the area proportionally */
-  border-radius: 8px; /* Rounded corners for the image */
-}
-
-.card-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; 
-  padding: 15px;
-  flex-grow: 1;
-}
-
-.card-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #333;  /* Darker text color */
-}
-
-.card-text {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #555;  /* Slightly lighter text color */
-}
-
-.btn-primary {
-  background-color: #007bff;  /* Blue background for the button */
-  border: none;
-  padding: 10px 15px;
-  border-radius: 25px;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.btn-primary:hover {
-  background-color: #0056b3;  /* Darker blue on hover */
-}
-
-/* Product List styling */
+/* ✅ FIXED PRODUCT CARDS */
 #product-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
+  align-items: stretch;
 }
 
-/* Responsive design for smaller screens */
+/* Card styling */
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 380px; /* ✅ Made cards slightly bigger */
+  height: 100%;
+  padding: 25px; /* ✅ Added more spacing */
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Ensures all cards stay the same height */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+/* Image styling */
+.card-img-top {
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Product title */
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Product description */
+.card-description {
+  font-size: 16px;
+  color: #444;
+  flex-grow: 1;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+
+.card-text {
+  font-size: 20px; 
+
+  color: #222;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Button styling */
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-align: center;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* ✅ RESPONSIVE FIX: EVEN ROWS + BIGGER CONTENT */
+@media (min-width: 1025px) {
+  #product-list {
+    justify-content: space-evenly;
+  }
+}
+
+@media (max-width: 1024px) {
+  #product-list {
+    justify-content: center;
+  }
+}
+
 @media (max-width: 768px) {
   #product-list {
-      flex-direction: column; /* Stack the cards vertically on smaller screens */
-      align-items: center;
-  }
-
-  .card {
-      width: 100%;
-      max-width: 300px; /* Max width for the card */
-  }
-
-  .footer-links {
-      display: block;
-      margin-top: 20px;
-  }
-
-  .footer-links a {
-      display: block;
-      margin: 5px 0;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -184,26 +197,23 @@ header {
 .site-footer {
   background-color: #fff;
   color: #000;
-  padding: 40px 0;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
+  padding: 50px 0;
+  font-size: 16px;
   border-top: 1px solid #ddd;
   text-align: center;
 }
 
-/* Content Section */
 .footer-content p {
   margin: 5px 0;
-  font-size: 14px;
+  font-size: 16px;
   color: #000;
 }
 
-/* Footer links section */
 .footer-links a {
   text-decoration: none;
   color: #000;
-  margin: 0 15px;
-  font-size: 14px;
+  margin: 0 20px;
+  font-size: 16px;
 }
 
 .footer-links a:hover {
